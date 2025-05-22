@@ -8,8 +8,3 @@ export type FetchOptions = RequestInit & {
   timeoutMs?: number;         // Request timeout in milliseconds
   signal?: AbortSignal;       // Optional external abort signal for cancellation
 };
-
-export type CacheEntry<T> = {
-  timestamp: number;
-  data: T;
-};
