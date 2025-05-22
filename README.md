@@ -2,6 +2,10 @@
 
 A collection of advanced utility functions for Next.js projects to simplify API interactions and blockchain smart contract integration.
 
+⚠️ Disclaimer
+This repository contains some of my commonly-used code snippets and utilities for my Next.js projects intended for myy own personal use. You are free to use and adapt the code as you wish, but it is provided as-is with no warranty or guarantees of suitability or correctness. Use at your own risk.
+
+
 ## Features
 
 - **API Client Utilities**
