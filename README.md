@@ -1,32 +1,36 @@
 # nextjs-utils
 
-Advanced utility functions for API requests and client-side helpers in Next.js projects.
+A collection of advanced utility functions for Next.js projects to simplify API interactions and blockchain smart contract integration.
 
 ## Features
 
-- Robust `apiClient` with:
-  - Automatic retries with exponential backoff and jitter
-  - Request timeout and cancellation support via `AbortController`
-  - In-memory caching with TTL support
-  - Customizable fetch options
-- Helpers:
-  - Query string builder (`buildQueryString`)
-  - Client-side `debounce` and `throttle` functions
-- Written in TypeScript with clear type definitions
+- **API Client Utilities**
+  - Robust fetch wrapper with automatic retries, exponential backoff, and jitter
+  - Request timeout and cancellation support
+  - In-memory caching with TTL for efficient data fetching
+  - Query string builder
+  - Client-side debounce and throttle helpers
+
+- **Smart Contract Utilities**
+  - Easy wallet connection (e.g., MetaMask) and provider setup
+  - Contract instance management via ABI and address
+  - Read-only contract calls
+  - Sending transactions for contract methods (e.g., buy/sell triggers)
+  - Transaction confirmation handling
 
 ## Installation
 
-Copy the `utils` folder into your Next.js project or install via your preferred method.
+Copy the `utils` folder into your Next.js project or integrate the utility files as needed.
 
-## Usage
+## Usage Examples
 
-### API Client
+### Connecting to Third-Party APIs with `apiClient`
 
 ```ts
-import { apiClient, clearApiClientCache, buildQueryString } from './utils/apiClient';
+import { apiClient } from './utils/apiClient';
 
-const data = await apiClient<MyDataType>('https://api.example.com/data', {
-  retries: 5,
+const userData = await apiClient<User>('https://api.example.com/users/123', {
+  retries: 3,
   timeoutMs: 7000,
-  cacheKey: 'example-data',
+  cacheKey: 'user-123',
 });
